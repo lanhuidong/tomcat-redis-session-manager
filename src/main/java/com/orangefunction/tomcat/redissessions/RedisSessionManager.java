@@ -254,7 +254,7 @@ public class RedisSessionManager extends ManagerBase implements Lifecycle {
         setState(LifecycleState.STARTING);
 
         Boolean attachedToValve = false;
-        for (Valve valve : getContainer().getPipeline().getValves()) {
+        for (Valve valve : getContext().getPipeline().getValves()) {
             if (valve instanceof RedisSessionHandlerValve) {
                 this.handlerValve = (RedisSessionHandlerValve) valve;
                 this.handlerValve.setRedisSessionManager(this);
