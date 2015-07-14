@@ -30,22 +30,15 @@ If your business depends on Tomcat and persistent sessions and you need a specif
 Tomcat Versions
 ---------------
 
-This project supports both Tomcat 6 and Tomcat 7. Starting at project version 1.1, precompiled JAR downloads are available for either version of Tomcat while project versions before 1.1 are only available for Tomcat 6.
+Tomcat 6 & Tomcat 7
+--------
 
-The official release branches in Git are as follows:
-* `master`: Continuing work for Tomcat 7 releases. Compatible with Java 7.
-* `tomcat-6`: Deprecated; may accept submitted patches, but no new work is being done on this branch. Compatible with Tomcat 6 and Java 6.
-
-Finalized branches include:
-* `tomcat-7`: Has been merged into `master`. Compatible with Java 6 or 7.
-* `java-7`: Has been merged into `master`. All of the work from master for Tomcat 7 but taking advantage of new features in Java 7. Compatible with Java 7 only.
+请参考https://github.com/jcoleman/tomcat-redis-session-manager
 
 Tomcat 8
 --------
 
-Tomcat 8 is not currently supported and has not been tested or developed for at all In fact, as noted in various bug reports, the project currently fails to compile when linked with Tomcat 8.
-
-I currently don't have the time to add Tomcat 8 support in my spare time. However if you're interested in Tomcat 8 support for your particular use case and/or business, as the README notes, I'm available as a consultancy on a contractual basis. If you'd like to pursue getting this feature added at a contract rate (and gain some commercial support as well), feel free to contact me at james@orangefunction.com.
+本项目测试环境为jdk1.8.0_45,tomcat 8.0.24
 
 Architecture
 ------------
@@ -75,8 +68,8 @@ The Valve must be declared before the Manager.
 Copy the following files into the `TOMCAT_BASE/lib` directory:
 
 * tomcat-redis-session-manager-VERSION.jar
-* jedis-2.5.2.jar
-* commons-pool2-2.2.jar
+* jedis-2.7.2.jar
+* commons-pool2-2.4.1.jar
 
 Reboot the server, and sessions should now be stored in Redis.
 
@@ -154,4 +147,4 @@ To get the example server up and running, you'll need to do the following:
 Acknowledgements
 ----------------
 
-The architecture of this project was based on the Mongo-Tomcat-Sessions project found at https://github.com/dawsonsystems/Mongo-Tomcat-Sessions
+This project is fork from https://github.com/jcoleman/tomcat-redis-session-manager
